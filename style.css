@@ -55,7 +55,8 @@ body {
     height: 4px;
     border-radius: 2px;
     background-color: #0dd0aa;
-    margin: 24px auto 16px auto;
+    /* margin: 24px auto 16px auto; */
+    margin: 24px 0;
 
 
 }
@@ -111,6 +112,22 @@ select:focus {
     text-decoration: none;
 }
 
+.center-wrapper {
+    text-align: center;
+}
+
+.center-wrapper .heading-main {
+    max-width:100% ;
+}
+
+.underline-box-center {
+    margin:24px auto 60px;
+}
+
+.underline-download-center {
+    margin: 0px auto 35px;
+}
+
 .heading-main {
     color: #0dd0aa !important;
     font-size: 32px !important;
@@ -157,7 +174,11 @@ select:focus {
     margin-bottom:83px;
 } */
 #offers {
-    padding-top: 84px;
+    padding-top: 35px;
+}
+
+.padding-top-50 {
+    padding-top:50px;
 }
 
 .small-content-spacer {
@@ -173,7 +194,11 @@ select:focus {
     font-size: 12px !important;
     color: #313131 !important;
     margin: 8px auto !important;
-    font-weight: bold;
+    font-weight: normal;
+}
+
+.theme-text {
+    color: #313131;
 }
 
 .combined {
@@ -191,6 +216,10 @@ select:focus {
     border: 0px;
     background: #E6F7F8;
     width: 65%;
+}
+
+.jumbotron {
+    padding:0 !important;
 }
 
 .jumbotron input:focus {
@@ -602,7 +631,8 @@ button:focus {
 .heading-wrapper {
     display: flex;
     align-items: center;
-    min-height: 35em;
+    padding-top: 75px;
+    min-height: 30em;
     padding-bottom: 0;
     margin-bottom: 0;
 }
@@ -616,6 +646,7 @@ button:focus {
     width: 22em;
     border-radius: 8px;
     margin: auto;
+    z-index:32;
 }
 
 .card-slider-content {
@@ -690,6 +721,10 @@ button:focus {
 
 .active {
     color: #0dd0aa !important;
+}
+
+.benefits-wrapper-row {
+    padding-left:1em !important;
 }
 
 @media screen and (max-width:1200px) {
@@ -880,6 +915,10 @@ button:focus {
 }
 
 @media (max-width: 640px) {
+
+    .nav-selected-item {
+        display:block !important;
+    }
   
 
     .swipper-wrapper {
@@ -975,6 +1014,13 @@ button:focus {
 }
 
 @media screen and (max-width:376px) {
+
+    .nav-selected-item {
+        display:block !important;
+    }
+
+   
+
     #phoneimg {
         padding-left: 18%;
     }
@@ -1134,6 +1180,7 @@ button:focus {
     width: 16em;
     position: relative;
     left: 5.4em !important;
+
 }
 
 #testimonials .swiper-slide.swiper-slide-next .testimonial-card {
@@ -1148,6 +1195,7 @@ button:focus {
     left: 8.4em !important;
     background: #F8BED6;
     min-height:13em;
+    z-index:-11;
 }
 
 .swiper-card-wrapper .swiper-slide.swiper-slide-next .card-slider-block {
@@ -1155,6 +1203,7 @@ button:focus {
     position:relative;
     left: -9.5em !important;
     min-height:13em;
+    z-index:-11;
 }
 
 .swiper-card-wrapper .swiper-slide.swiper-slide-prev {
