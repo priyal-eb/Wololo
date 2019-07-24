@@ -16,16 +16,17 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/css/swiper.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/css/swiper.min.css">
-    <link rel='stylesheet' href='Screen-1.css'>
+    <link rel='stylesheet' href='style.css'>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <title>Wololo Screen-2</title>
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+
+    <title>Landing Page Client Page</title>
 </head>
 
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink bg-white" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+            <a class="navbar-brand js-scroll-trigger" href="wololo-screen-2.html">
                 <img src="assets/images/full.svg" alt="Wololo logo">
             </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
@@ -37,22 +38,21 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#services">About</a>
+                        <a class="nav-link js-scroll-trigger" href="#offers">Offers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#portfolio">Offers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#about">Benefits</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#team">Testimonials</a>
+                        <a class="nav-link js-scroll-trigger" href="#about">About</a>
                     </li>
                     <li class="nav-item nav-selected-item">
-                        <select class='rounded-pill rounded-selected-wrapper'>
-                            <option value='English' selected> English</option>
-                            <option value='Germany'>Germany</option>
-                        </select>
+                        <div class="styled-select">
+                            <select class='rounded-pill rounded-selected-wrapper'>
+                                <option value='English' selected> English</option>
+                                <option value='Germany'>Germany</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="client-image">
+                        <img src="assets/images/client-company_logo.png" alt="">
                     </li>
                 </ul>
             </div>
@@ -78,7 +78,7 @@
 
             <div class='row'>
 
-                <div class="col-lg-6 col-md-12 col-sm-12 logo-heading-wrapper landing-wrapper-block">
+                <div class="col-lg-5 col-md-12 col-sm-12 logo-heading-wrapper landing-wrapper-block">
                     <h1 class='heading-main'>Cashback for Transport </h1>
                     <hr class="underline-box" style="margin-left:0rem;">
                     <p>No points. No coupons.
@@ -86,7 +86,7 @@
                     </p>
                     <p>You travel, and send us the invoice. We pay, you win!</p>
                 </div>
-                <div class='col-lg-6 col-sm-12'>
+                <div class='col-lg-7 col-sm-12'>
                     <!--Swiper slider-->
 
                     <div class="swipper-wrapper">
@@ -156,7 +156,7 @@
         </div>
 
     </div>
-    <div class="icon-row small-content-spacer">
+    <div class="icon-row small-content-spacer" id="offers">
         <div class='container'>
             <div class='row'>
                 <span class='mx-auto heading-content'>OFFERS</span>
@@ -205,7 +205,7 @@
             </p>
         </div>
     </div>
-    <div class='about small-content-spacer'>
+    <div class='about small-content-spacer' id="about">
         <div class='container'>
             <div class="row"><span class="mx-auto heading-content">ABOUT</span></div>
             <div class="row">
@@ -250,7 +250,7 @@
 
                 </div>
 
-                <div class="col-lg-6 col-md-12 change padding-top-25">
+                <div class="col-lg-6 col-md-12 change">
 
 
                     <div id=0 class='green-info info transportation'>
@@ -402,6 +402,18 @@
         </div>
 
     </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.min.js"></script>
+
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
     <script>
         $(document).ready(function () {
             $('.transportation').click(function () {
@@ -433,85 +445,78 @@
                 $('#2').removeClass('green-info');
                 $(this).toggleClass("green-info");
             });
+
+            $(".js-scroll-trigger").click(function (event) {
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top + 6 }, 500);
+            });
+
+            var phoneSlider = $('#phone-slider');
+            phoneSlider.owlCarousel({
+                loop: true,
+                margin: 0,
+                responsiveClass: true,
+                slideTransition: 'ease',
+                slideSpeed: 200,
+                smartSpeed: 1000,
+                dots: false,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false,
+                        dots: false,
+                    },
+                    600: {
+                        items: 1,
+                        nav: false,
+                    },
+                    1000: {
+                        items: 1,
+                        dots: false,
+                        nav: false,
+                    }
+                }
+            });
+
+            var mySwiper = new Swiper('.swiper-container', {
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'bullets',
+                    clickable: true,
+                },
+                autoplay: {
+                    delay: 10000,
+                    disableOnInteraction: false,
+                    stopOnLast: true,
+                },
+                speed: 1000,
+                effect: 'coverflow',
+                loop: true,
+                preventClicks: true,
+                preventClicksPropagation: false,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                coverflowEffect: {
+                    rotate: 0,
+                    stretch: 80,
+                    depth: 200,
+                    modifier: 1,
+                    slideShadows: false,
+                },
+                breakpoints: {
+                    675: {
+                        slidesPerView: 1,
+                        loopedSlides: 1,
+                        spaceBetween: 0
+                    }
+                }
+            })
         }); 
     </script>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.min.js"></script>
-
-    <script src="assets/js/owl.carousel.min.js"></script>
     <script>
-        var phoneSlider = $('#phone-slider');
-
-
-        phoneSlider.owlCarousel({
-            loop: true,
-            margin: 0,
-            responsiveClass: true,
-            slideTransition: 'ease',
-            slideSpeed: 200,
-            smartSpeed: 1000,
-            responsive: {
-                0: {
-                    items: 1,
-                    nav: false,
-                    dots: false,
-                },
-                600: {
-                    items: 1,
-                    nav: false,
-                },
-                1000: {
-                    items: 1,
-                    dots: false,
-                    nav: false,
-                }
-            }
+        $(document).scroll(function () {
+            var $nav = $(".navbar");
+            $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
         });
-    </script>
-    <script>
-        var mySwiper = new Swiper('.swiper-container', {
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'bullets',
-                clickable: true,
-            },
-            autoplay: {
-                delay: 10000,
-                disableOnInteraction: false,
-                stopOnLast: true,
-            },
-            speed: 1000,
-            effect: 'coverflow',
-            loop: true,
-            preventClicks: true,
-            preventClicksPropagation: false,
-            centeredSlides: true,
-            slidesPerView: 'auto',
-            coverflowEffect: {
-                rotate: 0,
-                stretch: 80,
-                depth: 200,
-                modifier: 1,
-                slideShadows: false,
-            },
-            breakpoints: {
-                675: {
-                    slidesPerView: 1,
-                    loopedSlides: 1,
-                    spaceBetween: 0
-                }
-            }
-        })
     </script>
 </body>
 

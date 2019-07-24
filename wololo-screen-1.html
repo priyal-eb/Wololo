@@ -17,11 +17,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/css/swiper.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/css/swiper.min.css">
 
-    <link rel='stylesheet' href='Screen-1.css'>
-    <title>Wololo!</title>
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel='stylesheet' href='style.css'>
+    <title>Landing Page</title>
 </head>
 
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
 
     <!-- <nav class="navbar fixed-top navbar-white bg-white">
         <div class='container'>
@@ -78,7 +79,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink bg-white" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+            <a class="navbar-brand js-scroll-trigger" href="wololo-screen-1.html">
                 <img src="assets/images/full.svg" alt="Wololo logo">
             </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
@@ -90,22 +91,24 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#services">About</a>
+                        <a class="nav-link js-scroll-trigger" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#portfolio">Offers</a>
+                        <a class="nav-link js-scroll-trigger" href="#offers">Offers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#about">Benefits</a>
+                        <a class="nav-link js-scroll-trigger" href="#benefits">Benefits</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#team">Testimonials</a>
+                        <a class="nav-link js-scroll-trigger" href="#testimonials">Testimonials</a>
                     </li>
                     <li class="nav-item nav-selected-item ">
-                        <select class='rounded-pill rounded-selected-wrapper'>
-                            <option value='English' selected> English</option>
-                            <option value='Germany'>Germany</option>
-                        </select>
+                        <div class="styled-select">
+                            <select class='rounded-pill rounded-selected-wrapper'>
+                                <option value='English' selected> English</option>
+                                <option value='Germany'>Germany</option>
+                            </select>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -122,9 +125,14 @@
                     <hr class="underline-box" style="margin-left:0rem;">
                     <p class='content'>Want to lern more ? add your email address and be amongst the first to get access
                         to our platform.</p>
-                    <div class='row combined rounded-pill'><input class='rounded-pill'
-                            placeholder="Enter your email here"> <button
-                            class='btn btn-gradient rounded-pill ml-auto'>Request Access</button></div>
+                    <div class='row combined rounded-pill'>
+                        <input class='rounded-pill' placeholder="Enter your email here">
+                        <button class='btn btn-gradient rounded-pill ml-auto btn-invisible-mobile'>Request
+                            Access</button>
+                    </div>
+                    <div class="btn-visible-mobile row">
+                        <button class='btn btn-gradient rounded-pill'>Request Access</button>
+                    </div>
                     <span class='special-text'>By Submitting this form you agree to Wololo's<a href='#'
                             class='highlight'> Privacy policy</a><span></span>
                 </div>
@@ -136,19 +144,20 @@
             </div>
         </div>
     </div>
-    <div class="jumbotron about content-spacer">
+    <div class="jumbotron about content-spacer" id="about">
         <div class='container'>
 
 
             <div class=row>
-                <div class="col-lg-6 col-md-12">
-                    <img src='assets\group_2019-07-16\group.png' class='dh'
-                        style="position: absolute;left: -12rem; width:136%;bottom:0;">
+                <div class="col-lg-6 col-md-12 transforming-wrapper">
+                    <img src='assets\group_2019-07-16\group.png' class='dh'>
                 </div>
 
                 <div class="col-lg-6 col-md-12">
-                    <span class='heading-content'>ABOUT</span>
-                    <h1 class='heading-main'>Transforming Cities </h1>
+                    <div class="about-wrapper">
+                        <span class='heading-content'>ABOUT</span>
+                        <h1 class='heading-main'>Transforming Cities </h1>
+                    </div>
                     <hr class='underline-box-small' style='margin-left: 0rem'>
 
 
@@ -165,14 +174,18 @@
         </div>
 
     </div>
-    <div class="icon-row small-content-spacer">
+    <div class="icon-row small-content-spacer" id="offers">
         <div class='container'>
-            <div class='row'>
+            <!-- <div class='row'>
                 <span class='mx-auto heading-content'>OFFERS</span>
 
             </div>
             <div class='row'>
                 <h1 class='heading-main mx-auto'>What is included ?</h1>
+            </div> -->
+            <div class="about-wrapper">
+                <span class='heading-content'>OFFERS</span>
+                <h1 class='heading-main'>What is included ? </h1>
             </div>
             <hr class='underline-box-small'>
             <div class='row'>
@@ -214,13 +227,17 @@
             </p>
         </div>
     </div>
-    <div class='benefits small-content-spacer'>
+    <div class='benefits small-content-spacer' id="benefits">
         <div class='container'>
-            <div class='row heading-content'><span>BENEFITS</span></div>
+            <!-- <div class='row heading-content'><span>BENEFITS</span></div>
             <div class='row'>
                 <h1 class='heading-main'>Why Choose us ?</h1>
+            </div> -->
+            <div class="about-wrapper">
+                <span class='heading-content'>BENEFITS</span>
+                <h1 class='heading-main'>Why Choose us ? </h1>
             </div>
-            <div class='row' style='padding-top:42px'>
+            <div class='row benefits-wrapper' style='padding-top:42px'>
                 <h3>FOR EMPLOYEES</h3>
             </div>
             <hr class='underline-box-small' style='margin-left: -1rem'>
@@ -265,7 +282,7 @@
                     </div>
                 </div>
             </div>
-            <div class='row'>
+            <div class='row benefits-wrapper'>
                 <h3>FOR EMPLOYERS</h3>
             </div>
             <hr class='underline-box-small' style='margin-left: -1rem'>
@@ -316,12 +333,16 @@
 
 
 
-    <div class='testimonials small-content-spacer'>
+    <div class='testimonials small-content-spacer' id="testimonials">
         <div class='container'>
             <div class='row'>
-                <div class='col-lg-5 col-md-12'>
-                    <span class='heading-content'>TESTIMONIALS</span>
-                    <h1 class='heading-main'>What They Are Saying!</h1>
+                <div class='col-lg-4 col-md-12'>
+                    <!-- <span class='heading-content'>TESTIMONIALS</span>
+                    <h1 class='heading-main'>What They Are Saying!</h1> -->
+                    <div class="about-wrapper">
+                        <span class='heading-content'>TESTIMONIALS</span>
+                        <h1 class='heading-main'>What They Are Saying! </h1>
+                    </div>
                     <hr class='underline-box-small' style='margin-left:0rem;'>
 
                     <p>
@@ -332,120 +353,15 @@
                         type and scrambled it to make a type specimen book.
                     </p>
                 </div>
-                <div class="col-lg-7 col-md-12 col-sm-12">
-                    <!-- <div class="owl-carousel" id="testimonial-slider">
-                        <div class="item">
-                            <div class="testimonial-card">
-                                <div class="testimonial-content">
-                                    <h4 class="text-white">Very efficient for employees</h4>
-                                    <p class="text-white">Lorem ipsum is placeholder text commonly used in the graphic,
-                                        print, and publishing industries for previewing layouts and visual mockups.</p>
-
-                                    <div class="slider-img-wrapper">
-                                        <div>
-                                            <img src="assets/images/oval.png" alt="Oval image">
-                                        </div>
-                                        <div class="slider-img-content text-white">
-                                            <h4>Tsutsui Ichiha</h4>
-                                            <p class="margin-bottom-0">Kolibri CEO</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial-card">
-                                <div class="testimonial-content">
-                                    <h4 class="text-white">Very efficient for employees</h4>
-                                    <p class="text-white">Getting a wololo subscription for my employees has meant we
-                                        could have more
-                                        freedom in locating our office and also boost staff morale. I also like how
-                                        wololo incentives geen travel options.</p>
-
-                                    <div class="slider-img-wrapper">
-                                        <div>
-                                            <img src="assets/images/oval.png" alt="Oval image">
-                                        </div>
-                                        <div class="slider-img-content text-white">
-                                            <h4>Tsutsui Ichiha</h4>
-                                            <p class="margin-bottom-0">Kolibri CEO</p>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial-card">
-                                <div class="testimonial-content">
-                                    <h4 class="text-white">Very efficient for employees</h4>
-                                    <p class="text-white">Lorem ipsum is placeholder text commonly used in the graphic,
-                                        print, and publishing industries for previewing layouts and visual mockups.</p>
-
-                                    <div class="slider-img-wrapper">
-                                        <div>
-                                            <img src="assets/images/oval.png" alt="Oval image">
-                                        </div>
-                                        <div class="slider-img-content text-white">
-                                            <h4>Tsutsui Ichiha</h4>
-                                            <p class="margin-bottom-0">Kolibri CEO</p>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial-card">
-                                <div class="testimonial-content">
-                                    <h4 class="text-white">Very efficient for employees</h4>
-                                    <p class="text-white">Getting a wololo subscription for my employees has meant we
-                                        could have more
-                                        freedom in locating our office and also boost staff morale. I also like how
-                                        wololo incentives geen travel options.</p>
-
-                                    <div class="slider-img-wrapper">
-                                        <div>
-                                            <img src="assets/images/oval.png" alt="Oval image">
-                                        </div>
-                                        <div class="slider-img-content text-white">
-                                            <h4>Tsutsui Ichiha</h4>
-                                            <p class="margin-bottom-0">Kolibri CEO</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial-card">
-                                <div class="testimonial-content">
-                                    <h4 class="text-white">Very efficient for employees</h4>
-                                    <p class="text-white">Getting a wololo subscription for my employees has meant we
-                                        could have more
-                                        freedom in locating our office and also boost staff morale. I also like how
-                                        wololo incentives geen travel options.</p>
-
-                                    <div class="slider-img-wrapper">
-                                        <div>
-                                            <img src="assets/images/oval.png" alt="Oval image">
-                                        </div>
-                                        <div class="slider-img-content text-white">
-                                            <h4>Tsutsui Ichiha</h4>
-                                            <p class="margin-bottom-0">Kolibri CEO</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
+                <div class="col-lg-8 col-md-12 col-sm-12">
 
                     <!--Swiper slider-->
 
-                    <div class="swipper-wrapper">
+                    <div class="swipper-wrapper testimonial-swipper-wrapper">
                         <!-- Slider main container -->
                         <div class="swiper-container">
                             <!-- Additional required wrapper -->
-                            <div class="swiper-wrapper">
+                            <div class="swiper-wrapper testimonial-swiper-wrapper">
                                 <!-- Slides -->
                                 <div class="swiper-slide">
                                     <div class="testimonial-card">
@@ -531,149 +447,18 @@
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                             <!-- If we need pagination -->
                             <div class="swiper-pagination"></div>
                         </div>
                     </div>
                 </div>
-                <!-- <div class='col-7'>
-                    <div class="owl-carousel" id="testimonial-slider">
-                        <div class="item">
-                            <div class='slide col'>
-                                <div class='row'>
-                                    <span class='mx-auto' styl="color:white; font-weight: bold;">Very efficient
-                                        for employees.
-                                    </span>
-                                </div>
-                                <p>
-                                    Getting a wololo subscription for my
-                                    employees has ment we could have more
-                                    freedom in locating our office and also boost
-                                    staff morale I also like how wololo incentivees
-                                    geen travel options.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class='slide col'>
-                                <div class='row'>
-                                    <span class='mx-auto' style="color:white; font-weight: bold;">Very efficient
-                                        for employees.
-                                    </span>
-                                </div>
-                                <p>
-                                    Getting a wololo subscription for my
-                                    employees has ment we could have more
-                                    freedom in locating our office and also boost
-                                    staff morale I also like how wololo incentivees
-                                    geen travel options.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class='slide col'>
-                                <div class='row'>
-                                    <span class='mx-auto' style="color:white; font-weight: bold;">Very efficient
-                                        for employees.
-                                    </span>
-                                </div>
-                                <p>
-                                    Getting a wololo subscription for my
-                                    employees has ment we could have more
-                                    freedom in locating our office and also boost
-                                    staff morale I also like how wololo incentivees
-                                    geen travel options.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
+
             </div>
         </div>
     </div>
-    <!-- <div class='footer'>
 
-        <div class='container'>
-            <div class='holder'>
-                <div class='col-lg-3 col-md-6 col-sm-12 intro'>
-                    <img src="assets\full_2019-07-16\full@2x.png" alt="" width="148px">
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus eaque amet iure beatae
-                        labore dolore unde, minima facilis provident, expedita natus totam voluptas porro omnis
-                        quasi dolor voluptatem aliquid quibusdam.
-                    </p>
-                    <img class='social' src="assets\facebook_2019-07-16\facebook.png" alt="">
-                    <img class='social' src="assets\twitter_2019-07-16\twitter.png" alt="">
-                    <img class='social' src="assets\instagram_2019-07-16\instagram.png" alt="">
-                    <img class='social' src="assets\googlePlus_2019-07-16\googlePlus.png" alt="">
-
-                </div>
-                <div class=' contact'>
-
-                    <p style='font-weight: bold'>CONTACT</p>
-                    <div class="contact-holder">
-                        <div>
-                            <p class='inner-flex'>
-
-                                <span><img src="assets\location_2019-07-16\location.png" alt=""
-                                        style="width:1rem;"></span>
-                                <span class=inner-flex-content>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                    Consectetur consequatur doloribus</span>
-
-                            </p>
-                            <p class='inner-flex'>
-                                <span><img src="assets\time_2019-07-16\time.png" alt=""></span>
-                                <span class=inner-flex-content>
-                                    Mon-Fri<br>
-                                    <span style='font-size: 14px;font-weight: bold;color: #848484'> 8:00 AM - 8:00
-                                        PM</span>
-                                </span>
-                            </p>
-                        </div>
-                        <div>
-                            <p class=' inner-flex'>
-                                <span><img src="assets\emailWeb_2019-07-16\emailWeb.png" alt=""
-                                        style="width:1rem;"></span>
-                                <span class=inner-flex-content>help@wololo.app</span>
-                            </p>
-                            <p class='inner-flex'>
-                                <span> <img src="assets\call_2019-07-16\call.png" alt=""></span>
-                                <span class='inner-flex-content'>+49 xxx xxx xxxxx</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class='download'>
-                    <p style='font-weight: bold'>DOWNLOAD OUR APP</p>
-                    <button class='btn'><img src="assets\Android_2019-07-16\bitmap.png" alt=""></button><br>
-                    <button class='btn'><img src="assets\IOS_2019-07-16\bitmap.png" alt=""></button>
-
-                </div>
-            </div>
-
-            <div class='row' style='font-size: 14px;color:#848484;'>
-                <span class='ml-3'>Copyright 2019| wololo</span>
-                <div class='ml-auto'>
-                    <span class='mr-3'>
-                        Terms & Conditions
-                    </span>
-                    <span class='mr-3'>
-                        |
-                    </span>
-                    <span class='mr-3'>
-                        Imprint
-                    </span>
-                    <span class='mr-3'>
-                        |
-                    </span>
-                    <span class='mr-3'>
-                        Privacy Policy
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div> -->
     <!-- footer section starts -->
     <div class="footer">
         <div class="container">
@@ -710,7 +495,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="col-lg-6 col-md-12 col-sm-12 padding-top-15">
                     <div class="footer-heading">
                         <h4>Contact</h4>
                     </div>
@@ -793,130 +578,92 @@
 
 
 
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script> -->
-    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="assets/js/owl.carousel.min.js"></script>
-    <script>
-        var testimonialSlider = $('#testimonial-slider');
-
-
-        testimonialSlider.owlCarousel({
-            loop: true,
-            margin: 0,
-            stagePadding: 0,
-            dots: true,
-            startPosition: 0, // will start from second slide
-            center: true,
-            responsiveClass: true,
-            slideTransition: 'ease',
-            slideSpeed: 200,
-            smartSpeed: 1000,
-            navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
-            responsive: {
-                0: {
-                    items: 1,
-                    nav: false,
-                    dots: true,
-                },
-                600: {
-                    items: 3,
-                    stagePadding: 20,
-                    nav: false,
-                },
-                1000: {
-                    items: 3,
-                    dots: true,
-                    nav: true,
-                }
-            }
-        });
-        // initialise owl carousel
-        // testimonialSlider.owlCarousel({
-        //     stagePadding: 200,
-        //     margin: 0,
-        //     startPosition: 0, // will start from second slide
-        //     center: true,
-        //     autoWidth: true,
-        //     loop: true,
-        //     slideTransition: 'linear',
-        //     responsiveClass: true,
-        //     smartSpeed: 650,
-        //     responsive: {
-        //         0: {
-        //             items: 3,
-        //             startPosition: 0,
-        //             stagePadding: 10, // will start from second slide
-        //             startPosition: 0, // will start from second slide
-        //             dots: true,
-        //             smartSpeed: 250,
-        //         },
-        //         600: {
-        //             stagePadding: 10,
-        //             items: 3,
-        //             margin: 10,
-        //             startPosition: 0, // will start from second slide
-        //         },
-        //         1000: {
-        //             items: 3
-        //         }
-        //     }
-        // });
-    </script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.min.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
 
     <script>
-        var mySwiper = new Swiper('.swiper-container', {
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'bullets',
-                clickable: true,
-            },
-            autoplay: {
-                delay: 10000,
-                disableOnInteraction: false,
-                stopOnLast: true,
-            },
-            speed: 1000,
-            effect: 'coverflow',
-            loop: true,
-            preventClicks: true,
-            preventClicksPropagation: false,
-            centeredSlides: true,
-            slidesPerView: 'auto',
-            coverflowEffect: {
-                rotate: 0,
-                stretch: 80,
-                depth: 200,
-                modifier: 1,
-                slideShadows: false,
-            },
-            breakpoints: {
-                675: {
-                    slidesPerView: 1,
-                    loopedSlides: 1,
-                    spaceBetween: 0
+        $(document).ready(function () {
+            var testimonialSlider = $('#testimonial-slider');
+            testimonialSlider.owlCarousel({
+                loop: true,
+                margin: 0,
+                stagePadding: 0,
+                dots: true,
+                startPosition: 0, // will start from second slide
+                center: true,
+                responsiveClass: true,
+                slideTransition: 'ease',
+                slideSpeed: 200,
+                smartSpeed: 1000,
+                navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false,
+                        dots: true,
+                    },
+                    600: {
+                        items: 3,
+                        stagePadding: 20,
+                        nav: false,
+                    },
+                    1000: {
+                        items: 3,
+                        dots: true,
+                        nav: true,
+                    }
                 }
-            }
-        })
-    </script>
+            });
 
+            var mySwiper = new Swiper('.swiper-container', {
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'bullets',
+                    clickable: true,
+                },
+                autoplay: {
+                    delay: 10000,
+                    disableOnInteraction: false,
+                    stopOnLast: true,
+                },
+                speed: 1000,
+                effect: 'coverflow',
+                loop: true,
+                preventClicks: true,
+                preventClicksPropagation: false,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                coverflowEffect: {
+                    rotate: 0,
+                    stretch: 80,
+                    depth: 200,
+                    modifier: 1,
+                    slideShadows: false,
+                },
+                breakpoints: {
+                    675: {
+                        slidesPerView: 1,
+                        loopedSlides: 1,
+                        spaceBetween: 0
+                    }
+                }
+            })
+
+            $(".js-scroll-trigger").click(function (event) {
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 500);
+            });
+
+            $(document).scroll(function () {
+                var $nav = $(".navbar");
+                $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+            });
+        });
+    </script>
 </body>
 
 </html>
