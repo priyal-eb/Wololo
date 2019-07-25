@@ -678,16 +678,18 @@ button:focus {
 
 .phone-carousel-wrapper {
     position: absolute;
-    top: 15%;
+    top: 10%;
     display: flex;
-    width: 15em;
+    width: 15.2em;
     margin: 0 auto;
     /* padding-left: 25px; */
-    padding: 0 10px 0 20px;
+    padding: 0 10px 0 17px;
 }
 
 .phone-carousel-wrapper.owl-carousel .owl-item img {
-    width: 200px !important;
+    /* width: 200px !important; */
+    width:100% !important;
+    margin:0 !important;
 }
 
 .padding-top-25 {
