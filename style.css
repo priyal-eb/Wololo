@@ -639,15 +639,17 @@ button:focus {
 
 /* card slider css starts */
 .card-slider-block {
-    position: relative;
     background: url('assets/images/rectangle.jpg');
     background-repeat: no-repeat;
+    position: relative;
     min-height: 240px;
     width: 22em;
     border-radius: 8px;
     margin: auto;
     z-index:32;
 }
+
+
 
 .card-slider-content {
     position: absolute;
@@ -680,7 +682,8 @@ button:focus {
     display: flex;
     width: 15em;
     margin: 0 auto;
-    padding-left: 25px;
+    /* padding-left: 25px; */
+    padding: 0 10px 0 20px;
 }
 
 .phone-carousel-wrapper.owl-carousel .owl-item img {
@@ -725,6 +728,11 @@ button:focus {
 
 .benefits-wrapper-row {
     padding-left:1em !important;
+}
+
+.download-app-row {
+    display:block;
+    margin:0;
 }
 
 @media screen and (max-width:1200px) {
@@ -1019,8 +1027,10 @@ button:focus {
         display:block !important;
     }
 
+    #offers {
+        padding-top: 90px;
+    }
    
-
     #phoneimg {
         padding-left: 18%;
     }
@@ -1206,6 +1216,76 @@ button:focus {
     z-index:-11;
 }
 
+#testimonials .swiper-slide:not(.swiper-slide-active) .testimonial-card .testimonial-content,
+#testimonials .swiper-slide:not(.swiper-slide-active) .testimonial-card .testimonial-content {
+    opacity: 0.5;
+}
+
+.swiper-card-wrapper .swiper-slide.swiper-slider-active .card-slider-block::before {
+    background-color:transparent !important;
+}
+
+
+/* .swiper-card-wrapper .swiper-slide.swiper-slider-active .card-slider-image2::before {
+    background-color:transparent !important;
+}
+
+.swiper-card-wrapper .swiper-slide.swiper-slider-active  .card-slider-image3::before {
+    background-color:transparent !important;
+} */
+
+.card-slider-image1 {
+    background: url('assets/images/rectangle.jpg');
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.card-slider-image1::before {
+    content:'';
+    position:absolute;
+    height:100%;
+    border-radius:8px;
+    width:100%;
+    background-color:rgba(248, 190, 214, 0.68);
+}
+
+.card-slider-image2 {
+    background: url('assets/images/rectangle.jpg');
+    background-repeat: no-repeat;
+    position:relative;
+    /* background: #F8BED6; */
+}
+
+.card-slider-image2::before {
+    content:'';
+    position:absolute;
+    height:100%;
+    border-radius:8px;
+    width:100%;
+    background-color:rgba(248, 190, 214, 0.68);
+}
+
+.card-slider-image3 {
+    background: url('assets/images/rectangle.jpg');
+    background-repeat: no-repeat;
+    position:relative;
+    /* background: #98D7EF; */
+}
+
+.card-slider-image3::before {
+    content:'';
+    position:absolute;
+    height:100%;
+    width:100%;
+    border-radius:8px;
+    background-color: rgba(152, 215, 239, 0.8196078431372549);
+}
+
+
+.padding-left-1em {
+    padding-left:1em;
+}
+
 .swiper-card-wrapper .swiper-slide.swiper-slide-prev {
     display:flex;
     align-items: center;
@@ -1217,11 +1297,9 @@ button:focus {
 }
 
 
-.swiper-card-wrapper 
-
 #testimonials .swiper-slide:not(.swiper-slide-active) .testimonial-card .testimonial-content,
 #testimonials .swiper-slide:not(.swiper-slide-active) .testimonial-card .testimonial-content {
-    opacity: 0.5
+    opacity: 0.5;
 }
 
 
