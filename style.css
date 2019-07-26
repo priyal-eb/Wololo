@@ -46,8 +46,6 @@ body {
     border-radius: 2px;
     background-color: #0dd0aa;
     margin: 32px auto;
-
-
 }
 
 .underline-box-small {
@@ -117,11 +115,11 @@ select:focus {
 }
 
 .center-wrapper .heading-main {
-    max-width:100% ;
+    max-width: 100%;
 }
 
 .underline-box-center {
-    margin:24px auto 60px;
+    margin: 24px auto 60px;
 }
 
 .underline-download-center {
@@ -146,6 +144,93 @@ select:focus {
     ;
     color: white;
 }
+
+/* dropdown css */
+
+/* .dropdown .list {
+    box-sizing: border-box;
+    transition: all 0.15s cubic-bezier(0.25, 0, 0.25, 1.75), opacity 0.1s linear;
+    -webkit-transform: scale(0.75);
+    transform: scale(0.75);
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.09);
+    background-color: #fff;
+    border-radius: 6px;
+    margin-top: 4px;
+    padding: 3px 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999;
+}
+
+.dropdown span {
+    display: none;
+} */
+
+
+/* .dropbtn {
+    background-color: #3498DB;
+    color: #8a8a8a;
+    padding: 2px;
+    width: 104px;
+    height: 32px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    border: solid 1px #e6e6e6;
+    background-color: #fbfbfb;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .dropdown-arrow-image {
+    width: 10px;
+    height: 10px;
+    object-fit: contain;
+    margin-top: 4px;
+    margin-left: 6px;
+  }
+  
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {background-color: #ddd;}
+  
+  .show {display: block;} */
+
+/* dropdown css ends */
+
+
 
 @media(max-width: 395px) {
     .btn-invisible-mobile {
@@ -174,11 +259,15 @@ select:focus {
     margin-bottom:83px;
 } */
 #offers {
-    padding-top: 35px;
+    padding-top: 80px;
+}
+
+#about {
+    padding-top: 80px !important;
 }
 
 .padding-top-50 {
-    padding-top:50px;
+    padding-top: 50px;
 }
 
 .small-content-spacer {
@@ -204,6 +293,7 @@ select:focus {
 .combined {
     max-width: 29.25rem;
     background: #E6F7F8;
+    margin-top:25px;
     border: 1px solid #0dd0aa;
 }
 
@@ -211,15 +301,36 @@ select:focus {
     margin-top: 13px !important;
 }
 
+.styled-select::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 93%;
+    background-color: rgba(250, 245, 245, 0.58);
+    border-radius: 20px;
+}
+
+.styled-select select option {
+    background: lightgrey !important;
+}
+
 .jumbotron input {
-    margin-left: 1rem;
+    /* margin-left: 1rem;
     border: 0px;
     background: #E6F7F8;
     width: 65%;
+    line-height: 42px; */
+    margin-left: 20px;
+    border: 0px;
+    background: transparent;
+    width: 65%;
+    line-height: 42px;
+    border-top-left-radius: 50% !important;
+    border-radius: 0 !important;
 }
 
 .jumbotron {
-    padding:0 !important;
+    padding: 0 !important;
 }
 
 .jumbotron input:focus {
@@ -639,14 +750,12 @@ button:focus {
 
 /* card slider css starts */
 .card-slider-block {
-    background: url('assets/images/rectangle.jpg');
-    background-repeat: no-repeat;
     position: relative;
     min-height: 240px;
     width: 22em;
     border-radius: 8px;
     margin: auto;
-    z-index:32;
+    z-index: 32;
 }
 
 
@@ -678,18 +787,15 @@ button:focus {
 
 .phone-carousel-wrapper {
     position: absolute;
-    top: 10%;
+    top: 15%;
     display: flex;
-    width: 15.2em;
+    width: 15em;
     margin: 0 auto;
-    /* padding-left: 25px; */
-    padding: 0 10px 0 17px;
+    padding-left: 25px;
 }
 
 .phone-carousel-wrapper.owl-carousel .owl-item img {
-    /* width: 200px !important; */
-    width:100% !important;
-    margin:0 !important;
+    width: 200px !important;
 }
 
 .padding-top-25 {
@@ -729,12 +835,7 @@ button:focus {
 }
 
 .benefits-wrapper-row {
-    padding-left:1em !important;
-}
-
-.download-app-row {
-    display:block;
-    margin:0;
+    padding-left: 1em !important;
 }
 
 @media screen and (max-width:1200px) {
@@ -767,19 +868,21 @@ button:focus {
 
     .underline-box {
         margin-left: auto !important;
-        margin:30px auto;
+        margin: 30px auto;
     }
 
     .content {
-        max-width:100%;
+        max-width: 100%;
     }
 
     .combined {
-        max-width:100%;
+        max-width: 100%;
     }
+
     .about-wrapper {
         text-align: center;
     }
+
     .underline-box-small {
         margin-left: auto !important;
         margin: 30px auto;
@@ -927,9 +1030,12 @@ button:focus {
 @media (max-width: 640px) {
 
     .nav-selected-item {
-        display:block !important;
+        display: block !important;
     }
-  
+
+    .padding-left-1em {
+        padding-left:0 !important;
+    }
 
     .swipper-wrapper {
         width: 22em !important;
@@ -979,6 +1085,7 @@ button:focus {
     .swipper-wrapper {
         margin: auto !important;
     }
+
     .testimonial-swiper-wrapper {
         width: 22em !important;
     }
@@ -1026,13 +1133,11 @@ button:focus {
 @media screen and (max-width:376px) {
 
     .nav-selected-item {
-        display:block !important;
+        display: block !important;
     }
 
-    #offers {
-        padding-top: 90px;
-    }
-   
+
+
     #phoneimg {
         padding-left: 18%;
     }
@@ -1073,9 +1178,11 @@ button:focus {
     .underline-box-small {
         margin: 0px auto 16px auto;
     }
+
     .testimonial-card {
-        height:16em;
+        height: 16em;
     }
+
     .testimonial-swiper-wrapper {
         width: 22em !important;
     }
@@ -1084,8 +1191,8 @@ button:focus {
 @media (max-width:320px) {
 
     .testimonial-card {
-        width:17em;
-        margin: 0  auto;
+        width: 17em;
+        margin: 0 auto;
     }
 
     .swipper-wrapper {
@@ -1205,14 +1312,13 @@ button:focus {
 .swiper-card-wrapper .swiper-slide.swiper-slide-prev .card-slider-block {
     position: relative;
     left: 8.4em !important;
-    background: #F8BED6;
-    min-height:13em;
-    z-index:-11;
+    min-height: 13em;
+    z-index: -11;
+    opacity: 0.5;
 }
 
 .swiper-card-wrapper .swiper-slide.swiper-slide-next .card-slider-block {
-    background: #98D7EF;
-    position:relative;
+    position: relative;
     left: -9.5em !important;
     min-height:13em;
     z-index:-11;
@@ -1222,6 +1328,8 @@ button:focus {
 #testimonials .swiper-slide:not(.swiper-slide-active) .testimonial-card .testimonial-content {
     opacity: 0.5;
 }
+
+
 
 .swiper-card-wrapper .swiper-slide.swiper-slider-active .card-slider-block::before {
     background-color:transparent !important;
@@ -1237,71 +1345,94 @@ button:focus {
 } */
 
 .card-slider-image1 {
-    background: url('assets/images/rectangle.jpg');
+    background-image: url('assets/images/bitmap.png');
     background-repeat: no-repeat;
     position: relative;
 }
 
 .card-slider-image1::before {
-    content:'';
-    position:absolute;
-    height:100%;
-    border-radius:8px;
-    width:100%;
-    background-color:rgba(248, 190, 214, 0.68);
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    background: rgb(252, 96, 188);
+    background: linear-gradient(90deg, rgba(252, 96, 188, .4) 0%, rgba(252, 153, 68, .4) 100%);
+    transition: all 1s ease;
 }
 
+.swiper-slide.swiper-slide-active .card-slider-image1::before {
+    background: linear-gradient(90deg, rgba(253, 175, 221, 0.7) 0%, rgba(252, 153, 68, 0.99) 100%);
+}
+
+/*CARD 2*/
 .card-slider-image2 {
-    background: url('assets/images/rectangle.jpg');
+    background-image: url('assets/images/bitmap.png');
     background-repeat: no-repeat;
-    position:relative;
-    /* background: #F8BED6; */
+    position: relative;
+
 }
 
 .card-slider-image2::before {
-    content:'';
-    position:absolute;
-    height:100%;
-    border-radius:8px;
-    width:100%;
-    background-color:rgba(248, 190, 214, 0.68);
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    background: rgb(73, 90, 255);
+    background: linear-gradient(90deg, rgba(73, 90, 255, .4) 0%, rgba(10, 207, 254, .4) 100%);
+    transition: all 0.8s ease;
 }
 
+.swiper-slide.swiper-slide-active .card-slider-image2::before {
+    background-color: linear-gradient(90deg, rgb(73, 90, 255, 0.7)0%, rgb(10, 207, 254, 0.99), 100%);
+}
+
+/*CARD 3*/
 .card-slider-image3 {
-    background: url('assets/images/rectangle.jpg');
+    background-image: url('assets/images/bitmap.png');
     background-repeat: no-repeat;
-    position:relative;
-    /* background: #98D7EF; */
+    position: relative;
 }
 
 .card-slider-image3::before {
-    content:'';
-    position:absolute;
-    height:100%;
-    width:100%;
-    border-radius:8px;
-    background-color: rgba(152, 215, 239, 0.8196078431372549);
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    background: rgb(238, 96, 156);
+    background: linear-gradient(90deg, rgba(238, 96, 156, .4) 0%, rgba(180, 101, 218, .4) 100%);
+    transition: all 0.8s ease;
 }
+
+.swiper-slide.swiper-slide-active .card-slider-image3::before {
+    background-color: linear-gradient(90deg, rgb(238, 96, 156, .7)0%, rgb(180, 101, 218, .99), 100%);
+}
+
 
 
 .padding-left-1em {
-    padding-left:1em;
+    padding-left: 1em;
 }
 
 .swiper-card-wrapper .swiper-slide.swiper-slide-prev {
-    display:flex;
+    display: flex;
     align-items: center;
 }
 
 .swiper-card-wrapper .swiper-slide.swiper-slide-next {
-    display:flex;
+    display: flex;
     align-items: center;
 }
 
+#offers-slider .swiper-slide.swiper-slider-active .card-slider-image1::before{
+    background-color: unset !important;
+}
 
-#testimonials .swiper-slide:not(.swiper-slide-active) .testimonial-card .testimonial-content,
 #testimonials .swiper-slide:not(.swiper-slide-active) .testimonial-card .testimonial-content {
     opacity: 0.5;
+
 }
 
 

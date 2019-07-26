@@ -20,7 +20,7 @@
 
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 
-    <title>Landing Page Client Page</title>
+    <title>wololo | Urban Mobility Perk</title>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -47,7 +47,7 @@
                         <div class="styled-select">
                             <select class='rounded-pill rounded-selected-wrapper'>
                                 <option value='English' selected> English</option>
-                                <option value='Germany'>Germany</option>
+                                <option value='Germany'>German</option>
                             </select>
                         </div>
                     </li>
@@ -89,14 +89,14 @@
                 <div class='col-lg-7 col-sm-12'>
                     <!--Swiper slider-->
 
-                    <div class="swipper-wrapper">
+                    <div id="offers-slider" class="swipper-wrapper">
                         <!-- Slider main container -->
                         <div class="swiper-container">
                             <!-- Additional required wrapper -->
                             <div class="swiper-wrapper swiper-card-wrapper">
                                 <!-- Slides -->
                                 <div class="swiper-slide">
-                                    <div class="card-slider-block">
+                                    <div class="card-slider-block card-slider-image1">
                                         <div class="card-slider-content text-white">
                                             <h4>25% Cashback </h4>
                                             <p>on BVG</p>
@@ -104,7 +104,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="card-slider-block">
+                                    <div class="card-slider-block card-slider-image2">
                                         <div class="card-slider-content text-white">
                                             <h4>25% Cashback </h4>
                                             <p>on BVG</p>
@@ -112,21 +112,13 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="card-slider-block">
+                                    <div class="card-slider-block card-slider-image3">
                                         <div class="card-slider-content text-white">
                                             <h4>25% Cashback </h4>
                                             <p>on BVG</p>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- <div class="swiper-slide">
-                                    <div class="card-slider-block">
-                                        <div class="card-slider-content text-white">
-                                            <h4>25% Cashback </h4>
-                                            <p>on BVG</p>
-                                        </div>
-                                    </div>
-                                </div> -->
                             </div>
                             <!-- If we need pagination -->
                             <div class="swiper-pagination"></div>
@@ -139,7 +131,7 @@
     </div>
     <div class="jumbotron small-content-spacer padding-top-0">
 
-        <div class='row download-app-row'>
+        <div class='row'>
             <h1 class='mx-auto heading-main' id='da' style='max-width: 588px;'>Download App & View All Deals</h1>
         </div>
         <div class='row'>
@@ -192,7 +184,7 @@
 
                 </div>
                 <div class="icon-c col-lg-2 col-md-4 col-sm-6">
-                    <img src='assets\group10_2019-07-16\group10.png'>
+                    <img src='assets\images/image.png'>
                     <span class="row icon-label">And More</span>
 
                 </div>
@@ -234,6 +226,9 @@
                         <img src="assets/group_2019-07-17/group.png" alt="group image">
                         <div class="owl-carousel phone-carousel-wrapper" id="phone-slider">
                             <div class="item">
+                                <img src="assets\11Intro_2019-07-17\11Intro.png" alt="Owl carousel slider">
+                            </div>
+                            <div class="item">
                                 <img src="assets\80UploadInvoice_2019-07-17\80UploadInvoice.png"
                                     alt="Owl carousel slider">
                             </div>
@@ -241,9 +236,7 @@
                                 <img src="assets\41HomeGraphCopy2_2019-07-17\41HomeGraphCopy2.png"
                                     alt="owl carousel slider">
                             </div>
-                            <div class="item">
-                                <img src="assets\11Intro_2019-07-17\11Intro.png" alt="Owl carousel slider">
-                            </div>
+
                         </div>
                     </div>
 
@@ -447,7 +440,9 @@
             });
 
             $(".js-scroll-trigger").click(function (event) {
-                $('html,body').animate({ scrollTop: $(this.hash).offset().top + 6 }, 500);
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top + 6
+                }, 500);
             });
 
             var phoneSlider = $('#phone-slider');
@@ -458,6 +453,9 @@
                 slideTransition: 'ease',
                 slideSpeed: 200,
                 smartSpeed: 1000,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
                 dots: false,
                 responsive: {
                     0: {
@@ -510,7 +508,7 @@
                     }
                 }
             })
-        }); 
+        });
     </script>
     <script>
         $(document).scroll(function () {
