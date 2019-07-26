@@ -1327,6 +1327,7 @@ button:focus {
     left: -9.5em !important;
     min-height:13em;
     z-index:-11;
+    opacity:0.5;
 }
 
 #testimonials .swiper-slide:not(.swiper-slide-active) .testimonial-card .testimonial-content,
