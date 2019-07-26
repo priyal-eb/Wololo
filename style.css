@@ -310,9 +310,9 @@ select:focus {
     border-radius: 20px;
 }
 
-.styled-select select option {
+/* .styled-select select option {
     background: lightgrey !important;
-}
+} */
 
 .jumbotron input {
     /* margin-left: 1rem;
@@ -782,14 +782,15 @@ button:focus {
 
 .phone-slider-wrapper {
     position: relative;
-    padding-right: 5em;
+    padding-right: 3em;
+    z-index:5;
 }
 
 .phone-carousel-wrapper {
     position: absolute;
     top: 15%;
     display: flex;
-    width: 15em;
+    width: 14.7em;
     margin: 0 auto;
     padding-left: 25px;
 }
@@ -1028,6 +1029,10 @@ button:focus {
 }
 
 @media (max-width: 640px) {
+
+    .row {
+        margin: 0;
+    }
 
     .nav-selected-item {
         display: block !important;
@@ -1345,7 +1350,7 @@ button:focus {
 } */
 
 .card-slider-image1 {
-    background-image: url('assets/images/bitmap.png');
+    background-image: url('assets/images/slider-1.png');
     background-repeat: no-repeat;
     position: relative;
 }
@@ -1356,18 +1361,20 @@ button:focus {
     height: 100%;
     width: 100%;
     border-radius: 8px;
-    background: rgb(252, 96, 188);
-    background: linear-gradient(90deg, rgba(252, 96, 188, .4) 0%, rgba(252, 153, 68, .4) 100%);
+    opacity: 0.5;
+    /* background: rgb(252, 96, 188);
+    background: linear-gradient(90deg, rgba(252, 96, 188, .4) 0%, rgba(252, 153, 68, .4) 100%); */
     transition: all 1s ease;
 }
 
 .swiper-slide.swiper-slide-active .card-slider-image1::before {
-    background: linear-gradient(90deg, rgba(253, 175, 221, 0.7) 0%, rgba(252, 153, 68, 0.99) 100%);
+    opacity:1;
+    /* background: linear-gradient(90deg, rgba(253, 175, 221, 0.7) 0%, rgba(252, 153, 68, 0.99) 100%); */
 }
 
 /*CARD 2*/
 .card-slider-image2 {
-    background-image: url('assets/images/bitmap.png');
+    background-image: url('assets/images/slider-2.png');
     background-repeat: no-repeat;
     position: relative;
 
@@ -1379,18 +1386,20 @@ button:focus {
     height: 100%;
     width: 100%;
     border-radius: 8px;
-    background: rgb(73, 90, 255);
-    background: linear-gradient(90deg, rgba(73, 90, 255, .4) 0%, rgba(10, 207, 254, .4) 100%);
+    opacity:0.5;
+    /* background: rgb(73, 90, 255);
+    background: linear-gradient(90deg, rgba(73, 90, 255, .4) 0%, rgba(10, 207, 254, .4) 100%); */
     transition: all 0.8s ease;
 }
 
 .swiper-slide.swiper-slide-active .card-slider-image2::before {
-    background-color: linear-gradient(90deg, rgb(73, 90, 255, 0.7)0%, rgb(10, 207, 254, 0.99), 100%);
+    opacity:1;
+    /* background-color: linear-gradient(90deg, rgb(73, 90, 255, 0.7)0%, rgb(10, 207, 254, 0.99), 100%); */
 }
 
 /*CARD 3*/
 .card-slider-image3 {
-    background-image: url('assets/images/bitmap.png');
+    background-image: url('assets/images/slider-3.png');
     background-repeat: no-repeat;
     position: relative;
 }
@@ -1401,13 +1410,15 @@ button:focus {
     height: 100%;
     width: 100%;
     border-radius: 8px;
-    background: rgb(238, 96, 156);
-    background: linear-gradient(90deg, rgba(238, 96, 156, .4) 0%, rgba(180, 101, 218, .4) 100%);
+    opacity:0.5;
+    /* background: rgb(238, 96, 156);
+    background: linear-gradient(90deg, rgba(238, 96, 156, .4) 0%, rgba(180, 101, 218, .4) 100%); */
     transition: all 0.8s ease;
 }
 
 .swiper-slide.swiper-slide-active .card-slider-image3::before {
-    background-color: linear-gradient(90deg, rgb(238, 96, 156, .7)0%, rgb(180, 101, 218, .99), 100%);
+    opacity:1;
+    /* background-color: linear-gradient(90deg, rgb(238, 96, 156, .7)0%, rgb(180, 101, 218, .99), 100%); */
 }
 
 
