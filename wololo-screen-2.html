@@ -44,11 +44,17 @@
                         <a class="nav-link js-scroll-trigger" href="#about">About</a>
                     </li>
                     <li class="nav-item nav-selected-item">
-                        <div class="styled-select">
-                            <select class='rounded-pill rounded-selected-wrapper'>
-                                <option value='English' selected> English</option>
-                                <option value='Germany'>German</option>
+                        <div class="select_mate" data-mate-select="active">
+                            <select name="" onchange="" onclick="return false;" id="">
+                                <option value="0">English</option>
+                                <option value="1">German</option>
                             </select>
+                            <p class="selecionado_opcion" onclick="open_select(this)"></p><span
+                                onclick="open_select(this)" class="icon_select_mate"><img src="./assets/images/down.svg"
+                                    alt=""></span>
+                            <div class="cont_list_select_mate">
+                                <ul class="cont_select_int"> </ul>
+                            </div>
                         </div>
                     </li>
                     <li class="client-image">
@@ -122,6 +128,8 @@
                             </div>
                             <!-- If we need pagination -->
                             <div class="swiper-pagination"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
                         </div>
                     </div>
                 </div>
@@ -189,7 +197,7 @@
 
                 </div>
             </div>
-            <p style="text-align: center">
+            <p style="text-align: center" class="main-text">
                 With over 25+ providers on our platform, we have the most comprohensive
                 range of mobility partners and we are constantly adding more. We also work
                 with mobility partners to bring unique offers and products got our usrs.
@@ -243,36 +251,30 @@
 
                 </div>
 
-                <div class="col-lg-5 col-md-12 change">
+                <div class="col-lg-6 col-md-12 change">
 
 
                     <div id=0 class='green-info info transportation'>
                         <h3>Use transportation services</h3>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy
-                            text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
-                            make a type specimen book.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
                         </p>
 
                     </div>
                     <div id=1 class='info invoice'>
                         <h3>Send us invoice</h3>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy
-                            text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
-                            make a type specimen book.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
                         </p>
 
                     </div>
                     <div id=2 class='info recycle'>
                         <h3>Recycle your cash</h3>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy
-                            text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
-                            make a type specimen book.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
                         </p>
                     </div>
                 </div>
@@ -397,6 +399,119 @@
     </div>
 
     <!-- Optional JavaScript -->
+    <script>
+        window.onload = function () {
+            crear_select();
+        }
+
+        function isMobileDevice() {
+            return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+        };
+
+
+        var li = new Array();
+        function crear_select() {
+            var div_cont_select = document.querySelectorAll("[data-mate-select='active']");
+            var select_ = '';
+            for (var e = 0; e < div_cont_select.length; e++) {
+                div_cont_select[e].setAttribute('data-indx-select', e);
+                div_cont_select[e].setAttribute('data-selec-open', 'false');
+                var ul_cont = document.querySelectorAll("[data-indx-select='" + e + "'] > .cont_list_select_mate > ul");
+                select_ = document.querySelectorAll("[data-indx-select='" + e + "'] >select")[0];
+                if (isMobileDevice()) {
+                    select_.addEventListener('change', function () {
+                        _select_option(select_.selectedIndex, e);
+                    });
+                }
+                var select_optiones = select_.options;
+                document.querySelectorAll("[data-indx-select='" + e + "']  > .selecionado_opcion ")[0].setAttribute('data-n-select', e);
+                document.querySelectorAll("[data-indx-select='" + e + "']  > .icon_select_mate ")[0].setAttribute('data-n-select', e);
+                for (var i = 0; i < select_optiones.length; i++) {
+                    li[i] = document.createElement('li');
+                    if (select_optiones[i].selected == true || select_.value == select_optiones[i].innerHTML) {
+                        li[i].className = 'active';
+                        document.querySelector("[data-indx-select='" + e + "']  > .selecionado_opcion ").innerHTML = select_optiones[i].innerHTML;
+                    };
+                    li[i].setAttribute('data-index', i);
+                    li[i].setAttribute('data-selec-index', e);
+                    // funcion click al selecionar 
+                    li[i].addEventListener('click', function () { _select_option(this.getAttribute('data-index'), this.getAttribute('data-selec-index')); });
+
+                    li[i].innerHTML = select_optiones[i].innerHTML;
+                    ul_cont[0].appendChild(li[i]);
+
+                }; // Fin For select_optiones
+            }; // fin for divs_cont_select
+        } // Fin Function 
+
+
+
+        var cont_slc = 0;
+        function open_select(idx) {
+            var idx1 = idx.getAttribute('data-n-select');
+            var ul_cont_li = document.querySelectorAll("[data-indx-select='" + idx1 + "'] .cont_select_int > li");
+            var hg = 0;
+            var slect_open = document.querySelectorAll("[data-indx-select='" + idx1 + "']")[0].getAttribute('data-selec-open');
+            var slect_element_open = document.querySelectorAll("[data-indx-select='" + idx1 + "'] select")[0];
+            if (isMobileDevice()) {
+                if (window.document.createEvent) { // All
+                    var evt = window.document.createEvent("MouseEvents");
+                    evt.initMouseEvent("mousedown", false, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+                    slect_element_open.dispatchEvent(evt);
+                } else if (slect_element_open.fireEvent) { // IE
+                    slect_element_open.fireEvent("onmousedown");
+                } else {
+                    slect_element_open.click();
+                }
+            } else {
+
+
+                for (var i = 0; i < ul_cont_li.length; i++) {
+                    hg += ul_cont_li[i].offsetHeight;
+                };
+                if (slect_open == 'false') {
+                    document.querySelectorAll("[data-indx-select='" + idx1 + "']")[0].setAttribute('data-selec-open', 'true');
+                    document.querySelectorAll("[data-indx-select='" + idx1 + "'] > .cont_list_select_mate > ul")[0].style.height = hg + "px";
+                    document.querySelectorAll("[data-indx-select='" + idx1 + "'] > .icon_select_mate")[0].style.transform = 'rotate(180deg)';
+                } else {
+                    document.querySelectorAll("[data-indx-select='" + idx1 + "']")[0].setAttribute('data-selec-open', 'false');
+                    document.querySelectorAll("[data-indx-select='" + idx1 + "'] > .icon_select_mate")[0].style.transform = 'rotate(0deg)';
+                    document.querySelectorAll("[data-indx-select='" + idx1 + "'] > .cont_list_select_mate > ul")[0].style.height = "0px";
+                }
+            }
+
+        } // fin function open_select
+
+        function salir_select(indx) {
+            var select_ = document.querySelectorAll("[data-indx-select='" + indx + "'] > select")[0];
+            document.querySelectorAll("[data-indx-select='" + indx + "'] > .cont_list_select_mate > ul")[0].style.height = "0px";
+            document.querySelector("[data-indx-select='" + indx + "'] > .icon_select_mate").style.transform = 'rotate(0deg)';
+            document.querySelectorAll("[data-indx-select='" + indx + "']")[0].setAttribute('data-selec-open', 'false');
+        }
+
+
+        function _select_option(indx, selc) {
+            if (isMobileDevice()) {
+                selc = selc - 1;
+            }
+            var select_ = document.querySelectorAll("[data-indx-select='" + selc + "'] > select")[0];
+
+            var li_s = document.querySelectorAll("[data-indx-select='" + selc + "'] .cont_select_int > li");
+            var p_act = document.querySelectorAll("[data-indx-select='" + selc + "'] > .selecionado_opcion")[0].innerHTML = li_s[indx].innerHTML;
+            var select_optiones = document.querySelectorAll("[data-indx-select='" + selc + "'] > select > option");
+            for (var i = 0; i < li_s.length; i++) {
+                if (li_s[i].className == 'active') {
+                    li_s[i].className = '';
+                };
+                li_s[indx].className = 'active';
+
+            };
+            select_optiones[indx].selected = true;
+            select_.selectedIndex = indx;
+            select_.onchange();
+            salir_select(selc);
+        }
+    </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -475,23 +590,50 @@
                 }
             });
 
+            phoneSlider.on('changed.owl.carousel', function (e) {
+                var removeClone = e.item.index - (e.relatedTarget._clones.length / 2);
+                if (removeClone === 0 || removeClone === 1) {
+                    $(".transportation").addClass("green-info");
+                    $('#1').removeClass('green-info');
+                    $('#2').removeClass('green-info');
+                }
+
+                if (removeClone === 1 || removeClone === 2) {
+                    $(".invoice").addClass("green-info");
+                    $('#0').removeClass('green-info');
+                    $('#2').removeClass('green-info');
+                }
+                if (removeClone === 2 || removeClone === 3) {
+                    $(".recycle").addClass("green-info");
+                    $('#0').removeClass('green-info');
+                    $('#1').removeClass('green-info');
+                }
+            });
+
+
             var mySwiper = new Swiper('.swiper-container', {
                 pagination: {
                     el: '.swiper-pagination',
                     type: 'bullets',
-                    clickable: true,
+                    pagination: '.pagination',
+                    paginationClickable: true
                 },
                 autoplay: {
                     delay: 10000,
-                    disableOnInteraction: false,
+                    disableOnInteraction: true,
                     stopOnLast: true,
                 },
                 speed: 1000,
+                allowTouchMove: true,
                 effect: 'coverflow',
                 loop: true,
                 preventClicks: true,
-                preventClicksPropagation: false,
+                preventClicksPropagation: true,
                 centeredSlides: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
                 slidesPerView: 'auto',
                 coverflowEffect: {
                     rotate: 0,
