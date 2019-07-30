@@ -231,34 +231,6 @@ select:focus {
 /* dropdown css ends */
 
 
-
-@media(max-width: 395px) {
-    .btn-invisible-mobile {
-        display: none;
-    }
-
-    .btn-visible-mobile {
-        display: flex;
-        justify-content: flex-start;
-        padding-top: .5rem;
-    }
-
-    .rounded-pill input {
-        padding-top: .5rem;
-        padding-bottom: .5rem;
-    }
-}
-
-@media(min-width: 395px) {
-    .btn-visible-mobile {
-        display: none;
-    }
-}
-
-/* .content-spacer{
-    margin-bottom:83px;
-} */
-
 #about {
     padding-top: 80px !important;
 }
@@ -496,17 +468,17 @@ select:focus {
     color: #0dd0aa;
     font-size: 20px;
     font-weight: 600;
-    margin-bottom:12px;
+    margin-bottom: 12px;
 }
 
- .swiper-button-prev {
-    opacity:0 !important;
+.swiper-button-prev {
+    opacity: 0 !important;
     right: 52px !important;
 }
 
 
- .swiper-button-next {
-    opacity:0 !important;
+.swiper-button-next {
+    opacity: 0 !important;
     right: 52px !important;
 }
 
@@ -543,6 +515,7 @@ select:focus {
 a:hover {
     transition: 0.3s all ease-in;
     color: #0da3c0 !important;
+    cursor: pointer;
 }
 
 
@@ -760,6 +733,15 @@ button:focus {
     padding-top: 48px;
 }
 
+.copyright-links a {
+    color: #848484;
+    text-decoration: none;
+}
+
+.copyright-links a:hover {
+    color: #0dd0aa !important;
+}
+
 .heading-wrapper {
     display: flex;
     align-items: center;
@@ -930,7 +912,28 @@ button:focus {
 
 }
 
+
 @media screen and (max-width:768px) {
+    .rounded-pill #form {
+        position: relative;
+    }
+
+    .rounded-pill #form input {
+        width: 100% !important;
+        margin: 0 20px;
+    }
+
+    .rounded-pill #form button {
+        position: absolute;
+        top: 3em;
+        width: 100%;
+    }
+
+    .special-text {
+        padding-top: 50px;
+        display: inline-block;
+    }
+
     #phoneimg {
         padding-left: 27%;
 
@@ -1049,6 +1052,7 @@ button:focus {
 
     .copyright-links a {
         font-size: 13px;
+        cursor: pointer;
     }
 
     .content-spacer {
@@ -1086,6 +1090,10 @@ button:focus {
         width: 22em !important;
     }
 
+    .swipper-wrapper#offers-slider {
+        margin-top: 25px;
+    }
+
     .swipper-wrapper.testimonial-swipper-wrapper {
         /* width: 22em !important; */
         width: 100% !important;
@@ -1111,10 +1119,6 @@ button:focus {
         padding-top: 2rem;
     }
 
-    #about {
-    padding-top: 0px !important;
-}
-
     .benefits {
         padding: 4rem 0;
     }
@@ -1133,11 +1137,8 @@ button:focus {
     }
 
     .heading-wrapper {
-        min-height: 45em;
-    }
-
-    .heading-wrapper {
-        margin-bottom: 30px !important;
+        min-height: auto;
+        margin-top: 6em;
     }
 
     .phone-carousel-wrapper.owl-carousel .owl-item img {
@@ -1392,10 +1393,10 @@ button:focus {
 .swiper-card-wrapper .swiper-slide.swiper-slide-next .card-slider-block {
     position: relative;
     left: -9.5em !important;
-    min-height:13em;
-    z-index:-11;
+    min-height: 13em;
+    z-index: -11;
     /* right: 8.3em !important; */
-    opacity:0.5;
+    opacity: 0.5;
 }
 
 #testimonials .swiper-slide:not(.swiper-slide-active) .testimonial-card .testimonial-content,
@@ -1409,6 +1410,40 @@ button:focus {
     background-color: transparent !important;
 }
 
+#new_card_slider .swiper-slide.swiper-slide-next .card-slider-block {
+    left: -7.81em !important;
+    position: relative;
+}
+
+#new_card_slider .swiper-slide.swiper-slide-next .card-slider-block:before,
+#new_card_slider .swiper-slide.swiper-slide-prev .card-slider-block:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+#new_card_slider .swiper-slide.swiper-slide-prev .card-slider-block {
+    left: 7.81em !important;
+    position: relative;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    z-index: 2;
+}
+
+#new_card_slider .swiper-slide.swiper-slide-duplicate-prev .card-slider-block {
+    left: -7.81em !important;
+}
+
+#new_card_slider .swiper-slide.swiper-slide-duplicate-next .card-slider-block {
+    left: 7.81em !important;
+}
 
 /* .swiper-card-wrapper .swiper-slide.swiper-slider-active .card-slider-image2::before {
     background-color:transparent !important;
@@ -1682,4 +1717,12 @@ button:focus {
     background-color: #fbfbfb;
     padding: 4px 11px;
     cursor: pointer;
+}
+
+@media(max-width:640px) {
+
+    #new_card_slider .swiper-slide.swiper-slide-next .card-slider-block:before,
+    #new_card_slider .swiper-slide.swiper-slide-prev .card-slider-block:before {
+        display: none;
+    }
 }
