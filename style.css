@@ -329,6 +329,8 @@ select:focus {
     line-height: 42px;
     border-top-left-radius: 50% !important;
     border-radius: 0 !important;
+    border-color: transparent;
+    outline-color: transparent;
 }
 
 .jumbotron {
@@ -790,15 +792,19 @@ button:focus {
 .card-slider-content img {
     max-width: 100%;
     max-height: 5rem;
-    margin: 1rem 0;
+    margin: 1rem auto;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
 }
 
 .card-slider-content {
 
     display: flex;
     flex-direction: column;
-    justify-content: stretch;
+    justify-content: center;
     text-align: -webkit-center;
+    text-align: center;
     padding: 2rem 0.5rem;
 }
 
@@ -873,6 +879,7 @@ button:focus {
 .benefits-wrapper-row {
     padding-left: 1em !important;
 }
+
 
 @media screen and (max-width:1200px) {
     #phoneimg {
@@ -1108,6 +1115,15 @@ button:focus {
 
 @media (max-width: 640px) {
 
+    .logo-heading-wrapper {
+        padding-top:60px !important;
+    }
+
+
+    .logo-heading-wrapper .heading-main {
+        font-size:30px !important;
+    }
+
     .row {
         margin: 0;
     }
@@ -1176,7 +1192,12 @@ button:focus {
 
     .heading-wrapper {
         min-height: auto;
-        margin-top: 2em;
+        margin-top: 0;
+        padding-top:60px;
+    }
+
+    #offers {
+        padding: 6rem 0 0 !important;
     }
 
     .phone-carousel-wrapper.owl-carousel .owl-item img {
@@ -1205,6 +1226,14 @@ button:focus {
 
     .testimonial-swiper-wrapper {
         width: 22em !important;
+    }
+
+    .download-app-wrapper {
+        padding-top:20px !important;
+    }
+
+    #about {
+        padding-top: 3em !important;
     }
 
 }
