@@ -1492,7 +1492,7 @@ button:focus {
 } */
 
 .card-slider-image1 {
-    background-image: url('assets/images/slider-1.png');
+    background-image: url('assets/images/rectangle-slider-1.png');
     background-repeat: no-repeat;
     position: relative;
 }
@@ -1516,7 +1516,7 @@ button:focus {
 
 /*CARD 2*/
 .card-slider-image2 {
-    background-image: url('assets/images/slider-2.png');
+    background-image: url('assets/images/rectangle-slider-3.png');
     background-repeat: no-repeat;
     position: relative;
 
@@ -1541,12 +1541,31 @@ button:focus {
 
 /*CARD 3*/
 .card-slider-image3 {
-    background-image: url('assets/images/slider-3.png');
+    background-image: url('assets/images/rectangle-slider-2.png');
     background-repeat: no-repeat;
     position: relative;
 }
 
 .card-slider-image3::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    opacity: 0.5;
+    /* background: rgb(238, 96, 156);
+    background: linear-gradient(90deg, rgba(238, 96, 156, .4) 0%, rgba(180, 101, 218, .4) 100%); */
+    transition: all 0.8s ease;
+}
+
+/*CARD 4*/
+.card-slider-image4 {
+    background-image: url('assets/images/rectangle-slider-4.png');
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.card-slider-image4::before {
     content: '';
     position: absolute;
     height: 100%;
