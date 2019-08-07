@@ -500,14 +500,24 @@ select:focus {
 }
 
 .swiper-button-prev {
+    /* opacity: 0 !important;
+    right: 52px !important; */
     opacity: 0 !important;
-    right: 52px !important;
+    left: 0;
+    height: 210px !important;
+    width: 300px !important;
+    top: 15% !important;
 }
 
 
 .swiper-button-next {
+    /* opacity: 0 !important;
+    right: 52px !important; */
     opacity: 0 !important;
-    right: 52px !important;
+    right: 0;
+    height: 210px !important;
+    width: 300px !important;
+    top: 15% !important;
 }
 
 /* Owl carousel css starts */
@@ -1674,12 +1684,22 @@ button:focus {
 }
 
 @media(max-width: 992px) {
+
+    .icon_select_mate.active .cont_list_select_mate .cont_select_int {
+        height:65px !important;
+    }
+
     .change {
         margin-top: 2rem;
     }
 
     .swipper-wrapper {
         margin: 0;
+    }
+
+    .navbar-collapse.show {
+        transition:0.3 all ease-in;
+        padding-bottom:40px;
     }
 }
 

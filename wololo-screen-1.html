@@ -393,6 +393,8 @@
                             </div>
                             <!-- If we need pagination -->
                             <div class="swiper-pagination"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
                         </div>
                     </div>
                 </div>
@@ -517,14 +519,67 @@
 
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="assets/js/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.min.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script> -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.min.js"></script>
+
+    <script src="assets/js/owl.carousel.min.js"></script>
     <script src="assets/js/jquery.easing.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            var mySwiper = new Swiper('.swiper-container', {
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'bullets',
+                    pagination: '.pagination',
+                    paginationClickable: true
+                },
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: true,
+                    stopOnLast: true,
+                },
+                speed: 1000,
+                allowTouchMove: true,
+                effect: 'coverflow',
+                loop: true,
+                preventClicks: true,
+                preventClicksPropagation: true,
+                centeredSlides: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                slidesPerView: 'auto',
+                coverflowEffect: {
+                    rotate: 0,
+                    stretch: 80,
+                    depth: 200,
+                    modifier: 1,
+                    slideShadows: false,
+                },
+                breakpoints: {
+                    675: {
+                        slidesPerView: 1,
+                        loopedSlides: 1,
+                        spaceBetween: 0
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
