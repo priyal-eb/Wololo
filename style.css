@@ -1192,7 +1192,7 @@ button:focus {
     }
 
     .theme-text {
-        padding-top: 1.5rem;
+        padding-top: 5px;
     }
 
     .icon-c {
@@ -1208,7 +1208,7 @@ button:focus {
     }
 
     .benefits-wrapper-row {
-        padding-top: 1rem;
+        padding-top: 0;
         padding-left: 0 !important;
     }
 
@@ -1360,7 +1360,7 @@ button:focus {
 @media (max-width:320px) {
 
     .testimonial-card {
-        width: 17em;
+        width: 16em;
         margin: 0 auto;
     }
 
