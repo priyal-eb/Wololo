@@ -1172,7 +1172,15 @@ button:focus {
     }
 
     .main-text {
-        padding-top: 3rem;
+        padding-top: 4rem;
+    }
+
+    .mobility-heading-wrapper {
+        padding-top:90px !important;
+    }
+
+    .logo-heading-wrapper .heading-mobility-text {
+        font-size:24px !important;
     }
 
     .theme-text {
