@@ -1127,6 +1127,10 @@ button:focus {
 
 @media (max-width: 640px) {
 
+    .logo-heading-wrapper {
+        padding: 0 15px;
+    }
+
     .download-holder span{
         display:flex;
         flex-direction: column;
@@ -1262,6 +1266,18 @@ button:focus {
         padding-top: 5em !important;
     }
 
+}
+
+@media (max-width: 576px) {
+    .card-slider-block {
+        position: relative;
+        min-height: 240px;
+        width: 21.99em;
+        border-radius: 8px;
+        margin: auto;
+        z-index: 32;
+        height: 94%;
+    }
 }
 
 @media screen and (max-width:440px) {
