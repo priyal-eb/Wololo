@@ -1079,6 +1079,8 @@ button:focus {
 
     .heading-main {
         font-size: 25px !important;
+        padding: 0 10px;
+        text-align: center;
     }
 
     .owl-item.center>div {
@@ -1124,6 +1126,12 @@ button:focus {
 }
 
 @media (max-width: 640px) {
+
+    .download-holder span{
+        display:flex;
+        flex-direction: column;
+
+    }
 
     .logo-heading-wrapper {
         padding-top:60px !important;
@@ -1318,6 +1326,7 @@ button:focus {
     .card-slider-block {
         width: 17em;
         margin: unset;
+        height:96%;
     }
 
     .download-holder span {
